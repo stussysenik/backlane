@@ -1,6 +1,7 @@
 node_modules
 dist
 build
+bun.lockb
 .DS_Store
 .backlane
 playwright-report
