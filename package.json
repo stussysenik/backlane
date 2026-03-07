@@ -1,0 +1,39 @@
+{
+	"name": "backlane",
+	"version": "0.1.0",
+	"description": "A local-first Electrobun app for turning recurring work into profitable playbooks.",
+	"scripts": {
+		"start": "vite build && electrobun dev",
+		"dev": "electrobun dev --watch",
+		"dev:hmr": "concurrently \"bun run hmr\" \"bun run start\"",
+		"hmr": "vite --host 127.0.0.1 --port 5173",
+		"web:api": "bun run src/server/http.ts",
+		"web:stack": "concurrently \"bun run web:api\" \"bun run hmr\"",
+		"build": "vite build && electrobun build",
+		"build:canary": "vite build && electrobun build --env=canary",
+		"test": "bun test src/**/*.test.ts",
+		"test:playwright": "start-server-and-test web:stack http://127.0.0.1:5173 \"playwright test\"",
+		"test:cypress": "start-server-and-test web:stack http://127.0.0.1:5173 \"cypress run\"",
+		"test:maestro": "start-server-and-test web:stack http://127.0.0.1:5173 \"maestro test maestro/web-smoke.yaml\"",
+		"docs:assets": "start-server-and-test web:stack http://127.0.0.1:5173 \"bun run scripts/capture-docs.ts\""
+	},
+	"dependencies": {
+		"@fontsource/ibm-plex-mono": "^5.2.7",
+		"@fontsource/space-grotesk": "^5.2.10",
+		"electrobun": "^1.15.1",
+		"react": "^19.2.4",
+		"react-dom": "^19.2.4"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"@playwright/test": "^1.58.2",
+		"@types/react": "^19.2.3",
+		"@types/react-dom": "^19.2.2",
+		"@vitejs/plugin-react": "^5.1.4",
+		"concurrently": "^9.1.0",
+		"cypress": "^15.11.0",
+		"start-server-and-test": "^2.1.5",
+		"typescript": "^5.9.3",
+		"vite": "^7.3.1"
+	}
+}
