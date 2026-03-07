@@ -10,6 +10,8 @@ Backlane is a local-first desktop app for turning recurring back-office work int
 
 It does not claim to guarantee `$40k` MRR. It does aim at a category where teams already spend real money on workflow capture and execution, then pushes toward a sharper niche: playbooks scored by leverage, attached to operator runs, and optimized around what compounds.
 
+![Dashboard](./docs/screenshots/dashboard.png)
+
 ## Why this can sell
 
 - Teams already pay for workflow documentation and execution tools.
