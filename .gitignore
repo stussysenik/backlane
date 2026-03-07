@@ -7,3 +7,4 @@ playwright-report
 test-results
 cypress/videos
 cypress/screenshots
+docs/.tmp-video
