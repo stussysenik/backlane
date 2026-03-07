@@ -1,0 +1,8 @@
+url: http://127.0.0.1:5173
+---
+- launchApp
+- assertVisible: "Compounded monthly value"
+- tapOn: "Runs"
+- assertVisible: "Runner"
+- tapOn: "Verify all dependencies"
+- assertVisible: "100% complete"
