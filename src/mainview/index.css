@@ -1,0 +1,537 @@
+:root {
+	color-scheme: light;
+	font-family: "Space Grotesk", sans-serif;
+	background:
+		radial-gradient(circle at top left, rgba(255, 108, 82, 0.2), transparent 28%),
+		radial-gradient(circle at top right, rgba(53, 175, 147, 0.2), transparent 32%),
+		linear-gradient(180deg, #f5efe2 0%, #efe7d9 100%);
+	color: #221d1b;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+	min-height: 100%;
+	margin: 0;
+}
+
+body {
+	background: transparent;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+.shell {
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 320px 1fr;
+	background:
+		radial-gradient(circle at 20% 0%, rgba(255, 120, 91, 0.15), transparent 30%),
+		radial-gradient(circle at 80% 0%, rgba(53, 175, 147, 0.12), transparent 24%);
+}
+
+.loading-shell {
+	display: grid;
+	place-items: center;
+}
+
+.loading-card {
+	width: min(520px, calc(100vw - 2rem));
+	padding: 2rem;
+	border-radius: 28px;
+	background: rgba(255, 249, 240, 0.92);
+	box-shadow: 0 30px 80px rgba(45, 35, 30, 0.12);
+}
+
+.sidebar {
+	padding: 2rem 1.5rem;
+	background: linear-gradient(180deg, #1f1b1a 0%, #2f2927 100%);
+	color: #f7f1ea;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.brand-block h1,
+.hero h2,
+.panel h3,
+.panel h4,
+.loading-card h1 {
+	margin: 0;
+	line-height: 1.05;
+}
+
+.brand-copy,
+.hero-copy,
+.metric-card p,
+.focus-card p,
+.run-step p,
+.economics-note,
+.playbook-card p {
+	color: rgba(34, 29, 27, 0.72);
+}
+
+.sidebar .brand-copy,
+.sidebar .hero-copy {
+	color: rgba(247, 241, 234, 0.72);
+}
+
+.eyebrow {
+	margin: 0 0 0.5rem;
+	font-size: 0.72rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	color: #e76c53;
+}
+
+.sidebar .eyebrow {
+	color: #a8f0df;
+}
+
+.nav-stack,
+.stack {
+	display: grid;
+	gap: 0.9rem;
+}
+
+.nav-button,
+.focus-card,
+.run-card,
+.playbook-card-main {
+	width: 100%;
+	border: none;
+	border-radius: 20px;
+	text-align: left;
+}
+
+.nav-button {
+	padding: 1rem 1.1rem;
+	background: rgba(255, 255, 255, 0.06);
+	color: inherit;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: transform 160ms ease, background 160ms ease;
+}
+
+.nav-button.active,
+.nav-button:hover {
+	background: rgba(168, 240, 223, 0.14);
+	transform: translateX(3px);
+}
+
+.nav-button small,
+.pill,
+.status-card small,
+.run-card small,
+.mini-metric span {
+	font-family: "IBM Plex Mono", monospace;
+}
+
+.sidebar-footer {
+	margin-top: auto;
+	display: grid;
+	gap: 1rem;
+}
+
+.pill-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+}
+
+.pill {
+	padding: 0.32rem 0.6rem;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.08);
+	font-size: 0.72rem;
+}
+
+.main {
+	padding: 2rem;
+	display: grid;
+	gap: 1.5rem;
+}
+
+.hero {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	gap: 1rem;
+	padding: 1.6rem 1.8rem;
+	border-radius: 30px;
+	background: rgba(255, 251, 245, 0.86);
+	box-shadow: 0 20px 60px rgba(52, 38, 29, 0.08);
+}
+
+.hero h2 {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	max-width: 14ch;
+}
+
+.hero-actions {
+	display: grid;
+	gap: 1rem;
+	min-width: 240px;
+}
+
+.status-card {
+	padding: 1rem;
+	border-radius: 20px;
+	background: linear-gradient(180deg, #fff5e6 0%, #f9ebd6 100%);
+	display: grid;
+	gap: 0.25rem;
+}
+
+.status-card span {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+}
+
+.status-card strong,
+.metric-card strong,
+.mini-metric strong,
+.playbook-card-metrics strong,
+.focus-meta strong {
+	font-size: clamp(1.5rem, 2vw, 2.1rem);
+}
+
+.error-banner {
+	padding: 0.9rem 1rem;
+	border-radius: 18px;
+	background: rgba(231, 108, 83, 0.12);
+	color: #7f3320;
+}
+
+.dashboard,
+.content-grid,
+.content-grid-wide {
+	display: grid;
+	gap: 1.4rem;
+}
+
+.metric-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.metric-card,
+.panel {
+	border-radius: 28px;
+	background: rgba(255, 251, 245, 0.9);
+	box-shadow: 0 24px 60px rgba(52, 38, 29, 0.08);
+}
+
+.metric-card {
+	padding: 1.25rem;
+	display: grid;
+	gap: 0.4rem;
+}
+
+.content-grid {
+	grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+}
+
+.content-grid-wide {
+	grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+	align-items: start;
+}
+
+.panel {
+	padding: 1.25rem;
+}
+
+.panel-header,
+.section-row,
+.playbook-card-footer,
+.step-topline,
+.action-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	gap: 0.75rem;
+}
+
+.sticky-header {
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	padding-bottom: 0.8rem;
+	background: linear-gradient(180deg, rgba(255, 251, 245, 1) 75%, rgba(255, 251, 245, 0));
+}
+
+.list-panel,
+.editor-panel {
+	min-height: 70vh;
+}
+
+.editor-panel {
+	display: grid;
+	gap: 1.2rem;
+}
+
+.search-input,
+.field input,
+.field select,
+.field textarea,
+.markdown-box {
+	width: 100%;
+	border: 1px solid rgba(62, 46, 39, 0.12);
+	border-radius: 16px;
+	background: #fffdf9;
+	padding: 0.8rem 0.9rem;
+	color: inherit;
+}
+
+.search-input {
+	max-width: 220px;
+}
+
+.field {
+	display: grid;
+	gap: 0.45rem;
+}
+
+.field span {
+	font-size: 0.85rem;
+	font-weight: 500;
+}
+
+.field-wide {
+	grid-column: 1 / -1;
+}
+
+.field-grow {
+	flex: 1;
+}
+
+.compact-field {
+	width: 120px;
+}
+
+.editor-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.9rem;
+}
+
+.metrics-strip {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 0.75rem;
+}
+
+.mini-metric {
+	padding: 0.85rem;
+	border-radius: 18px;
+	background: rgba(53, 175, 147, 0.08);
+	display: grid;
+	gap: 0.25rem;
+}
+
+.panel-subsection {
+	display: grid;
+	gap: 0.8rem;
+}
+
+.step-editor,
+.playbook-card,
+.focus-card,
+.run-card,
+.run-step {
+	padding: 1rem;
+	border-radius: 20px;
+	background: rgba(248, 241, 231, 0.72);
+}
+
+.step-editor {
+	display: grid;
+	gap: 0.75rem;
+}
+
+.icon-button,
+.ghost-button,
+.secondary-button,
+.primary-button,
+.danger-button {
+	border: none;
+	border-radius: 999px;
+	padding: 0.78rem 1rem;
+	font-weight: 600;
+}
+
+.icon-button,
+.ghost-button {
+	background: rgba(62, 46, 39, 0.08);
+}
+
+.secondary-button {
+	background: rgba(53, 175, 147, 0.14);
+	color: #1d5d4f;
+}
+
+.primary-button {
+	background: #221d1b;
+	color: #fffaf4;
+}
+
+.danger-button {
+	background: rgba(231, 108, 83, 0.14);
+	color: #7f3320;
+}
+
+.playbook-card {
+	display: grid;
+	gap: 0.8rem;
+}
+
+.playbook-card.selected,
+.focus-card.selected,
+.run-card.selected {
+	outline: 2px solid rgba(53, 175, 147, 0.28);
+}
+
+.playbook-card-main {
+	padding: 0;
+	background: transparent;
+	display: flex;
+	justify-content: space-between;
+	gap: 0.9rem;
+}
+
+.playbook-card-metrics,
+.focus-meta {
+	text-align: right;
+}
+
+.markdown-box {
+	min-height: 260px;
+	font-family: "IBM Plex Mono", monospace;
+	font-size: 0.88rem;
+	resize: vertical;
+}
+
+.footer-actions {
+	padding-top: 0.2rem;
+}
+
+.run-card,
+.focus-card {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	gap: 1rem;
+	border: none;
+}
+
+.run-detail {
+	display: grid;
+	gap: 1rem;
+}
+
+.progress-strip {
+	height: 12px;
+	border-radius: 999px;
+	background: rgba(62, 46, 39, 0.08);
+	overflow: hidden;
+}
+
+.progress-bar {
+	height: 100%;
+	border-radius: inherit;
+	background: linear-gradient(90deg, #35af93 0%, #e76c53 100%);
+}
+
+.run-step {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: start;
+	gap: 0.85rem;
+}
+
+.run-step.checked {
+	background: rgba(53, 175, 147, 0.12);
+}
+
+.run-step input {
+	margin-top: 0.2rem;
+}
+
+.run-step-topline {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: center;
+}
+
+.empty-run {
+	display: grid;
+	place-items: center;
+	min-height: 50vh;
+	text-align: center;
+}
+
+.economics-note {
+	padding: 1rem;
+	border-radius: 20px;
+	background: rgba(34, 29, 27, 0.06);
+}
+
+@media (max-width: 1120px) {
+	.shell {
+		grid-template-columns: 1fr;
+	}
+
+	.sidebar {
+		padding-bottom: 1rem;
+	}
+
+	.metric-grid,
+	.metrics-strip,
+	.content-grid,
+	.content-grid-wide {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 760px) {
+	.main {
+		padding: 1rem;
+	}
+
+	.hero,
+	.panel-header,
+	.section-row,
+	.step-topline,
+	.playbook-card-main,
+	.playbook-card-footer {
+		flex-direction: column;
+	}
+
+	.hero-actions,
+	.compact-field,
+	.search-input {
+		width: 100%;
+		max-width: none;
+	}
+
+	.editor-grid {
+		grid-template-columns: 1fr;
+	}
+}
