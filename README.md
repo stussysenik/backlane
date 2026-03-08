@@ -1,5 +1,7 @@
 # Backlane
 
+- note: this was inspired by the idea of playing with Electrobun mostly
+
 ![Electrobun](https://img.shields.io/badge/Electrobun-1.15.1-211d1b?style=for-the-badge)
 ![Bun](https://img.shields.io/badge/Bun-1.1.x-f6efe1?style=for-the-badge&logo=bun&logoColor=211d1b)
 ![Playwright](https://img.shields.io/badge/Playwright-passing-2e9f7a?style=for-the-badge&logo=playwright)
