@@ -1,5 +1,8 @@
 # Backlane
 
+![Demo](demo.gif)
+
+
 - note: this was inspired by the idea of playing with Electrobun mostly
 
 ![Electrobun](https://img.shields.io/badge/Electrobun-1.15.1-211d1b?style=for-the-badge)
